@@ -3,7 +3,7 @@ import get_model
 
 
 def train(data_name, model_name):
-    X, y = get_data.get_training_xy("~/tracktrack/" + data_name + "/")
+    X, y = get_data.get_training_xy("./tracktrack/" + data_name + "/")
     model = get_model.get_model(model_name)
 
     try:
