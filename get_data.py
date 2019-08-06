@@ -13,7 +13,7 @@ def prep_images(images):
     return X
 
 
-def get_training_xy(data_path="~/tracktrack/"):
+def get_training_xy(data_path="./tracktrack/"):
     positions = list(just.iread(data_path + "positions.jsonl"))
     images = [matplotlib.image.imread(x) for x in just.glob(data_path + "im*.png")]
     m = min(len(images), len(positions))
