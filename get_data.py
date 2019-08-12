@@ -1,5 +1,5 @@
 import numpy as np
-import scipy.misc
+import skimage
 
 import matplotlib.image
 import just
@@ -8,7 +8,7 @@ import just
 def prep_images(images):
     if not isinstance(images, list):
         images = [images]
-    X = np.array([scipy.misc.imresize(im, (72, 128, 3)) for im in images])
+    X = np.array([skimage.transform.resize(im, (72, 128, 3)) for im in images])
     X = np.moveaxis(X, -1, 1)
     return X
 
